@@ -15,7 +15,7 @@ spec:
         app: fastapi
     spec:
       containers:
-      - name: fastapi-application
-        image: docker pull rajkumardockerhub/fastapi-ci:cb364ae11a923275d62e88492680af47b2050b52
-        ports:
-        - containerPort: 8000
+        - name: fastapi-application
+          image: rajkumardockerhub/fastapi-ci:c40abbbd5c5be535f604b5dd6dccf70b70a6c77a
+          ports:
+            - containerPort: 8000
