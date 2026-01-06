@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-deployment
+  labels:
+    app: fastapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+      - name: fastapi-application
+        image: docker pull rajkumardockerhub/fastapi-ci:cb364ae11a923275d62e88492680af47b2050b52
+        ports:
+        - containerPort: 8000
