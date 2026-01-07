@@ -14,6 +14,9 @@ spec:
       labels:
         app: fastapi
     spec:
+      imagePullSecrets:
+        - name: dockerhub-sceret
+    spec:
       containers:
         - name: fastapi-application
           image: rajkumardockerhub/fastapi-ci:c40abbbd5c5be535f604b5dd6dccf70b70a6c77a
