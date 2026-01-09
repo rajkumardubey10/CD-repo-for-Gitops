@@ -2,10 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fastapi-deployment
-  labels:
-    app: fastapi
+ 
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: fastapi
@@ -19,5 +18,5 @@ spec:
           image: rajkumardockerhub/fastapi-ci:6ff269804f178f9f9ea92548296f1a3c3b06b0d8
           ports:
             - containerPort: 8000
-          imagePullSecrets:
-        - name: dockerhub-sceret
+      imagePullSecrets:
+        - name: my-docker-secret
