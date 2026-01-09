@@ -13,12 +13,12 @@ spec:
     metadata:
       labels:
         app: fastapi
-    spec:
-      imagePullSecrets:
-        - name: dockerhub-sceret
+    
     spec:
       containers:
         - name: fastapi-application
           image: rajkumardockerhub/fastapi-ci:971f9d0af70d6caf45cf78971318518390e1d7d1
           ports:
             - containerPort: 8000
+          imagePullSecrets:
+        - name: dockerhub-sceret
