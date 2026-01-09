@@ -13,11 +13,10 @@ spec:
     metadata:
       labels:
         app: fastapi
-    
     spec:
       containers:
         - name: fastapi-application
-          image: rajkumardockerhub/fastapi-ci:971f9d0af70d6caf45cf78971318518390e1d7d1
+          image: rajkumardockerhub/fastapi-ci:6ff269804f178f9f9ea92548296f1a3c3b06b0d8
           ports:
             - containerPort: 8000
           imagePullSecrets:
