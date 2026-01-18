@@ -30,7 +30,8 @@ Git remains the **single source of truth** for deployments.
 
 ## 🧭 Argo CD Application Overview
 
-![Argo CD Application Tree View](./docs/images/argocd-application-tree.png)
+<img width="1351" height="427" alt="13 204 82 185_8080_applications" src="https://github.com/user-attachments/assets/28df2da5-274d-4c5f-9819-1e53c5569e35" />
+
 
 This screenshot shows the **Argo CD Application Tree View**, providing a visual representation
 of how Argo CD manages and tracks Kubernetes resources derived from this repository.
@@ -46,7 +47,8 @@ of how Argo CD manages and tracks Kubernetes resources derived from this reposit
 
 ## 🌳 Argo CD Resource Tree & Health Status
 
-![Argo CD Resource Graph](./docs/images/argocd-resource-graph.png)
+<img width="1366" height="768" alt="Argocd_UI_Screenshot" src="https://github.com/user-attachments/assets/651811de-b18f-4dfc-93c2-175b8c6e3c84" />
+
 
 This view shows the **resource hierarchy and live status** of the deployed application.
 
@@ -62,7 +64,8 @@ This confirms **successful GitOps reconciliation**.
 
 ## 🚀 Application Running in Kubernetes
 
-![Application Running from Kubernetes](./docs/images/application-running.png)
+<img width="1366" height="768" alt="fastapi-sample-application" src="https://github.com/user-attachments/assets/6fb6481e-74c9-40ac-92db-b3f18733e80a" />
+
 
 This screenshot shows the **FastAPI application running successfully in the Kubernetes cluster**,
 served from a container image defined in this GitOps repository.
