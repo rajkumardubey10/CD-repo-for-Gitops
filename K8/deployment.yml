@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fastapi-deployment
- 
 spec:
   replicas: 4
   selector:
@@ -14,9 +13,9 @@ spec:
         app: fastapi
     spec:
       containers:
-          - name: fastapi-application
-            image: rajkumardockerhub/fastapi-ci:6ff269804f178f9f9ea92548296f1a3c3b06b0d8
-            ports:
-              - containerPort: 8000
+        - name: fastapi-application
+          image: rajkumardockerhub/fastapi-app-multistage:9aea1f9a8f1fbe921ec39bc68991d67c1412f958
+          ports:
+            - containerPort: 8000
       imagePullSecrets:
         - name: my-docker-secret
