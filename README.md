@@ -122,9 +122,9 @@ This clean separation follows **industry-standard GitOps architecture**.
 │   └── service.yaml
 ├── docs/
 │   └── images/
-│       ├── argocd-application-tree.png
+│       ├── argocd-application.png
 │       ├── argocd-resource-graph.png
-│       └── application-running.png
+│       └── fastapi-sample-application.png
 └── README.md
 └── kind-config.yaml
 
