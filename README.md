@@ -126,4 +126,6 @@ This clean separation follows **industry-standard GitOps architecture**.
 │       ├── argocd-resource-graph.png
 │       └── application-running.png
 └── README.md
+└── kind-config.yaml
+
 
