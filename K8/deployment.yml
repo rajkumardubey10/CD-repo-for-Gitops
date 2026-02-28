@@ -17,5 +17,21 @@ spec:
           image: rajkumardockerhub/fastapi-app-multistage:9aea1f9a8f1fbe921ec39bc68991d67c1412f958
           ports:
             - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+            
       imagePullSecrets:
         - name: my-docker-secret
