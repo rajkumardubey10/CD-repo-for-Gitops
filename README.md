@@ -120,11 +120,10 @@ This clean separation follows **industry-standard GitOps architecture**.
 ├── k8s/
 │   ├── deployment.yaml
 │   └── service.yaml
-├── docs/
-│   └── images/
-│       ├── argocd-application.png
+├── Screenshot/
+│       ├── Argocd_UI_Screenshot.png
 │       ├── argocd-resource-graph.png
-│       └── fastapi-sample-application.png
+│       └── fastapi-sample-applicatiom.png 
 └── README.md
 └── kind-config.yaml
 
