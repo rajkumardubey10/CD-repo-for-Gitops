@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: fastapi-deployment
 spec:
+  revisionHistoryLimit: 5
   strategy:
    type: RollingUpdate
    rollingUpdate:
