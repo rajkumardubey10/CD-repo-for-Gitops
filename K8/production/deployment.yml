@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-production
+  namespace: production
+spec:
+  revisionHistoryLimit: 5
+  strategy:
+   type: RollingUpdate
+   rollingUpdate:
+     maxSurge: 1
+     maxUnavailable: 0
+  replicas: 4
+  selector:
+    matchLabels:
+      app: fastapi-production
+  template:
+    metadata:
+      labels:
+        app: fastapi-production
+    spec:
+      containers:
+        - name: fastapi-application
+          image: rajkumardockerhub/fastapi-app-multistage:9aea1f9a8f1fbe921ec39bc68991d67c1412f958
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+      
+      imagePullSecrets:
+        - name: my-docker-secret
+
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                app: fastapi-production
+            topologyKey: "kubernetes.io/hostname"
