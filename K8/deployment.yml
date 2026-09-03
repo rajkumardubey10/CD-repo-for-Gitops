@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: fastapi-application
-          image: rajkumardockerhub/fastapi-app-multistage:65f32b4ec72530c9187976dd23cbb0b9d9be6dc8
+          image: rajkumardockerhub/fastapi-app-multistage:d93ac7bc7cc303d3f70afd2d57dcaad356e7736e
           ports:
             - containerPort: 8000
           readinessProbe:
