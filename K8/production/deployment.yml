@@ -6,10 +6,10 @@ metadata:
 spec:
   revisionHistoryLimit: 5
   strategy:
-   type: RollingUpdate
-   rollingUpdate:
-     maxSurge: 1
-     maxUnavailable: 0
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
   replicas: 2
   selector:
     matchLabels:
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: fastapi-application
-          image: rajkumardockerhub/fastapi-app-multistage:9aea1f9a8f1fbe921ec39bc68991d67c1412f958
+          image: rajkumardockerhub/fastapi-app-multistage:c15cd1ba9f733261f0c226ef81f7ef37a52ac10f
           ports:
             - containerPort: 8000
           readinessProbe:
@@ -31,7 +31,6 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 10
             failureThreshold: 3
-
           livenessProbe:
             httpGet:
               path: /health
@@ -39,14 +38,12 @@ spec:
             initialDelaySeconds: 15
             periodSeconds: 20
             failureThreshold: 3
-      
       imagePullSecrets:
         - name: my-docker-secret
-
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchLabels:
-                app: fastapi-production
-            topologyKey: "kubernetes.io/hostname"
+            - labelSelector:
+                matchLabels:
+                  app: fastapi-production
+              topologyKey: "kubernetes.io/hostname"
