@@ -39,10 +39,11 @@ spec:
             failureThreshold: 3
       imagePullSecrets:
         - name: my-docker-secret
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchLabels:
-                  app: fastapi
-              topologyKey: "kubernetes.io/hostname"
+
+      # affinity:
+      #   podAntiAffinity:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #     - labelSelector:
+      #         matchLabels:
+      #           app: fastapi
+      #       topologyKey: "kubernetes.io/hostname"
