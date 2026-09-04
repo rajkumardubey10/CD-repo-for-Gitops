@@ -9,7 +9,7 @@ spec:
     rollingUpdate:
       maxSurge: 0
       maxUnavailable: 1
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: fastapi
